@@ -1,5 +1,9 @@
 <!-- @format -->
 
+Full Credits to the original author: Yuki Kojima 
+
+# This version is modified by Arya Singh for EduBox due to some issues in the original code. Compatibility with Nextjs and React is added and some performance improvements are done. Moreover can be used as a submodule in other projects.
+
 # Interactive, Droplet-like Metaballs with Three.js and GLSL
 
 Demo for the tutorial on how to create interactive, droplet-like metaballs using Three.js and GLSL.
