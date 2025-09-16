@@ -4,6 +4,34 @@ Full Credits to the original author: Yuki Kojima
 
 # This version is modified by Arya Singh for EduBox due to some issues in the original code. Compatibility with Nextjs and React is added and some performance improvements are done. Moreover can be used as a submodule in other projects.
 
+```js
+import { useEffect, useRef } from 'react';
+import { startDroplets } from "@/interactive-droplets/src/scripts";
+
+
+export function Page() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"],
+  });
+  
+  const webglRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const isMobile = window.matchMedia('(max-width: 640px)').matches;
+    if (!isMobile && webglRef.current) {
+      startDroplets(webglRef.current);
+    }
+  }, []);
+
+  in some return ()
+ <div id="webgl" className="w-full h-full" />;
+);
+}    
+```
+
 # Interactive, Droplet-like Metaballs with Three.js and GLSL
 
 Demo for the tutorial on how to create interactive, droplet-like metaballs using Three.js and GLSL.
